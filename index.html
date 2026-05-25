@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Predictor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="logo">
+                <i class="fa-solid fa-filter"></i>
+                <h1>Lead<span>Predictor</span></h1>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="input-group">
+                    <label>Language</label>
+                    <select>
+                        <option>🇺🇸 English</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label>Currency</label>
+                    <select>
+                        <option>$ US Dollar</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Campaign Start</label>
+                    <div class="date-input">
+                        <input type="text" value="08-May-2026" readonly>
+                        <i class="fa-regular fa-calendar"></i>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Campaign End</label>
+                    <div class="date-input">
+                        <input type="text" value="04-Nov-2026" readonly>
+                        <i class="fa-regular fa-calendar"></i>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Total Revenue</label>
+                    <div class="number-input">
+                        <span>$</span>
+                        <input type="number" id="total-revenue" value="10000">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Avg. Order Value</label>
+                    <div class="number-input">
+                        <span>$</span>
+                        <input type="number" id="avg-order-value" value="1000">
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Dashboard -->
+            <main class="dashboard">
+                <div class="dashboard-top">
+                    <!-- Chart Section -->
+                    <div class="chart-panel">
+                        <div class="y-axis-labels">
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+                            <span class="y-title">Months</span>
+                        </div>
+                        <div class="chart-area" id="chart-area">
+                            <!-- Background grid -->
+                            <div class="grid-lines">
+                                <div></div><div></div><div></div><div></div><div></div>
+                            </div>
+                            <!-- Bars will be injected by JS -->
+                        </div>
+                        <div class="x-axis-labels" id="x-axis-labels">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Metrics Section -->
+                    <div class="metrics-panel">
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <div><i class="fa-solid fa-folder"></i> Prospects</div>
+                                <span>100%</span>
+                            </div>
+                            <div class="metric-value" id="val-prospects">125</div>
+                            <div class="metric-bar-container">
+                                <div class="metric-bar prospects-bar" style="width: 100%"></div>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <div><i class="fa-solid fa-user"></i> Leads</div>
+                                <span>20%</span>
+                            </div>
+                            <div class="metric-value" id="val-leads">25</div>
+                            <div class="metric-bar-container">
+                                <div class="metric-bar leads-bar" style="width: 20%"></div>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-header">
+                                <div><i class="fa-solid fa-trophy"></i> Customers</div>
+                                <span id="val-customer-rate">8%</span>
+                            </div>
+                            <div class="metric-value" id="val-customers">10</div>
+                            <div class="metric-bar-container">
+                                <div class="metric-bar customers-bar" style="width: 8%" id="bar-customers"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Controls Section -->
+                <div class="controls-panel">
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <label>Lead Response Rate</label>
+                        </div>
+                        <div class="slider-container">
+                            <input type="range" id="lead-response" min="1" max="100" value="40">
+                            <div class="slider-track-highlight" id="lead-highlight"></div>
+                        </div>
+                        <div class="slider-value" id="val-lead-response">40.00%</div>
+                    </div>
+
+                    <div class="slider-group">
+                        <div class="slider-header">
+                            <label>Prospect Response Rate</label>
+                        </div>
+                        <div class="slider-container">
+                            <input type="range" id="prospect-response" min="1" max="100" value="20">
+                            <div class="slider-track-highlight" id="prospect-highlight"></div>
+                        </div>
+                        <div class="slider-value" id="val-prospect-response">20.00%</div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
