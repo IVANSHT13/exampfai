@@ -7,6 +7,62 @@ document.addEventListener('DOMContentLoaded', () => {
         dateFormat: "d-M-Y"
     });
 
+    // Translations dictionary
+    const translations = {
+        en: {
+            language: "Language",
+            currency: "Currency",
+            campaign_start: "Campaign Start",
+            campaign_end: "Campaign End",
+            total_revenue: "Total Revenue",
+            avg_order_value: "Avg. Order Value",
+            months: "Months",
+            prospects: "Prospects",
+            leads: "Leads",
+            customers: "Customers",
+            lead_response_rate: "Lead Response Rate",
+            prospect_response_rate: "Prospect Response Rate",
+            people: "people",
+            month: "Month"
+        },
+        bg: {
+            language: "Език",
+            currency: "Валута",
+            campaign_start: "Начало на кампания",
+            campaign_end: "Край на кампания",
+            total_revenue: "Общ приход",
+            avg_order_value: "Средна стойност поръчка",
+            months: "Месеци",
+            prospects: "Контакти",
+            leads: "Потенциални клиенти",
+            customers: "Клиенти",
+            lead_response_rate: "Процент отговори (потенциални)",
+            prospect_response_rate: "Процент отговори (контакти)",
+            people: "души",
+            month: "Месец"
+        }
+    };
+
+    let currentLang = 'en';
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang][key]) {
+                el.innerText = translations[lang][key];
+            }
+        });
+        updateCalculations(); // Re-render text on chart
+    }
+
+    const languageSelect = document.getElementById('language-select');
+    if (languageSelect) {
+        languageSelect.addEventListener('change', (e) => {
+            setLanguage(e.target.value);
+        });
+    }
+
     const totalRevenueInput = document.getElementById('total-revenue');
     const avgOrderValueInput = document.getElementById('avg-order-value');
     
@@ -78,9 +134,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Render X Axis
         xAxisLabels.innerHTML = '';
+        const peopleText = translations[currentLang].people;
         for(let i=0; i<=6; i++) {
             const span = document.createElement('span');
-            span.innerText = `${i * step} people`;
+            span.innerText = `${i * step} ${peopleText}`;
             xAxisLabels.appendChild(span);
         }
 
@@ -129,10 +186,10 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.appendChild(tooltip);
         }
         tooltip.innerHTML = `
-            <div>Month #${data.month}</div>
-            <div>Prospects: ${data.prospects}</div>
-            <div>Leads: ${data.leads}</div>
-            <div>Customers: ${data.customers}</div>
+            <div>${translations[currentLang].month} #${data.month}</div>
+            <div>${translations[currentLang].prospects}: ${data.prospects}</div>
+            <div>${translations[currentLang].leads}: ${data.leads}</div>
+            <div>${translations[currentLang].customers}: ${data.customers}</div>
         `;
         tooltip.style.display = 'block';
         moveTooltip(e);

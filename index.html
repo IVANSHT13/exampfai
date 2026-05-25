@@ -22,21 +22,23 @@
             <!-- Sidebar -->
             <aside class="sidebar">
                 <div class="input-group">
-                    <label>Language</label>
-                    <select>
-                        <option>🇺🇸 English</option>
+                    <label data-i18n="language">Language</label>
+                    <select id="language-select">
+                        <option value="en">🇺🇸 English</option>
+                        <option value="bg">🇧🇬 Bulgarian</option>
                     </select>
                 </div>
                 
                 <div class="input-group">
-                    <label>Currency</label>
+                    <label data-i18n="currency">Currency</label>
                     <select>
                         <option>$ US Dollar</option>
+                        <option>BGN Bulgarian Lev</option>
                     </select>
                 </div>
 
                 <div class="input-group">
-                    <label>Campaign Start</label>
+                    <label data-i18n="campaign_start">Campaign Start</label>
                     <div class="date-input">
                         <input type="text" id="campaign-start" value="08-May-2026" readonly>
                         <i class="fa-regular fa-calendar" onclick="document.getElementById('campaign-start')._flatpickr.open()"></i>
@@ -44,7 +46,7 @@
                 </div>
 
                 <div class="input-group">
-                    <label>Campaign End</label>
+                    <label data-i18n="campaign_end">Campaign End</label>
                     <div class="date-input">
                         <input type="text" id="campaign-end" value="04-Nov-2026" readonly>
                         <i class="fa-regular fa-calendar" onclick="document.getElementById('campaign-end')._flatpickr.open()"></i>
@@ -52,7 +54,7 @@
                 </div>
 
                 <div class="input-group">
-                    <label>Total Revenue</label>
+                    <label data-i18n="total_revenue">Total Revenue</label>
                     <div class="number-input">
                         <span>$</span>
                         <input type="number" id="total-revenue" value="10000">
@@ -60,7 +62,7 @@
                 </div>
 
                 <div class="input-group">
-                    <label>Avg. Order Value</label>
+                    <label data-i18n="avg_order_value">Avg. Order Value</label>
                     <div class="number-input">
                         <span>$</span>
                         <input type="number" id="avg-order-value" value="1000">
@@ -80,7 +82,7 @@
                             <span>4</span>
                             <span>5</span>
                             <span>6</span>
-                            <span class="y-title">Months</span>
+                            <span class="y-title" data-i18n="months">Months</span>
                         </div>
                         <div class="chart-area" id="chart-area">
                             <!-- Background grid -->
@@ -98,7 +100,7 @@
                     <div class="metrics-panel">
                         <div class="metric-card">
                             <div class="metric-header">
-                                <div><i class="fa-solid fa-folder"></i> Prospects</div>
+                                <div><i class="fa-solid fa-folder"></i> <span data-i18n="prospects">Prospects</span></div>
                                 <span>100%</span>
                             </div>
                             <div class="metric-value" id="val-prospects">125</div>
@@ -109,7 +111,7 @@
 
                         <div class="metric-card">
                             <div class="metric-header">
-                                <div><i class="fa-solid fa-user"></i> Leads</div>
+                                <div><i class="fa-solid fa-user"></i> <span data-i18n="leads">Leads</span></div>
                                 <span>20%</span>
                             </div>
                             <div class="metric-value" id="val-leads">25</div>
@@ -120,7 +122,7 @@
 
                         <div class="metric-card">
                             <div class="metric-header">
-                                <div><i class="fa-solid fa-trophy"></i> Customers</div>
+                                <div><i class="fa-solid fa-trophy"></i> <span data-i18n="customers">Customers</span></div>
                                 <span id="val-customer-rate">8%</span>
                             </div>
                             <div class="metric-value" id="val-customers">10</div>
@@ -135,7 +137,7 @@
                 <div class="controls-panel">
                     <div class="slider-group">
                         <div class="slider-header">
-                            <label>Lead Response Rate</label>
+                            <label data-i18n="lead_response_rate">Lead Response Rate</label>
                         </div>
                         <div class="slider-container">
                             <input type="range" id="lead-response" min="1" max="100" value="40">
@@ -146,7 +148,7 @@
 
                     <div class="slider-group">
                         <div class="slider-header">
-                            <label>Prospect Response Rate</label>
+                            <label data-i18n="prospect_response_rate">Prospect Response Rate</label>
                         </div>
                         <div class="slider-container">
                             <input type="range" id="prospect-response" min="1" max="100" value="20">
