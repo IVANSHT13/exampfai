@@ -59,9 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Custom Language Select Logic
     const langWrapper = document.getElementById('lang-wrapper');
     const langTrigger = document.getElementById('lang-trigger');
-    const langOptions = document.querySelectorAll('.custom-option');
+    const langOptions = langWrapper ? langWrapper.querySelectorAll('.custom-option') : [];
     const selectedLangText = document.getElementById('selected-lang-text');
-    const selectedLangImg = langTrigger.querySelector('img');
+    const selectedLangImg = langTrigger ? langTrigger.querySelector('img') : null;
 
     if (langTrigger) {
         langTrigger.addEventListener('click', () => {
@@ -250,15 +250,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Currency Switcher
-    const currencySelect = document.getElementById('currency-select');
     const currencySymbols = document.querySelectorAll('.currency-symbol');
     
-    if (currencySelect) {
-        currencySelect.addEventListener('change', (e) => {
-            const newSymbol = e.target.value;
-            currencySymbols.forEach(el => {
-                el.innerText = newSymbol;
+    // Custom Currency Select Logic
+    const currWrapper = document.getElementById('currency-wrapper');
+    const currTrigger = document.getElementById('currency-trigger');
+    const currOptions = document.querySelectorAll('.currency-option');
+    const selectedCurrText = document.getElementById('selected-currency-text');
+    const selectedCurrImg = currTrigger.querySelector('img');
+
+    if (currTrigger) {
+        currTrigger.addEventListener('click', () => {
+            currWrapper.classList.toggle('open');
+        });
+
+        currOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Update active classes
+                currOptions.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+
+                // Get values
+                const newSymbol = this.getAttribute('data-value');
+                const newText = this.querySelector('span').innerText;
+                const newImgSrc = this.querySelector('img').src;
+
+                // Update trigger UI
+                selectedCurrText.innerText = newText;
+                selectedCurrImg.src = newImgSrc;
+                
+                // Close dropdown
+                currWrapper.classList.remove('open');
+
+                // Update symbols on the inputs
+                currencySymbols.forEach(el => {
+                    el.innerText = newSymbol;
+                });
             });
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!currWrapper.contains(e.target)) {
+                currWrapper.classList.remove('open');
+            }
         });
     }
 
