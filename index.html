@@ -23,17 +23,29 @@
             <aside class="sidebar">
                 <div class="input-group">
                     <label data-i18n="language">Language</label>
-                    <select id="language-select">
-                        <option value="en">🇺🇸 English</option>
-                        <option value="bg">🇧🇬 Bulgarian</option>
-                    </select>
+                    <div class="custom-select-wrapper" id="lang-wrapper">
+                        <div class="custom-select-trigger" id="lang-trigger">
+                            <img src="https://flagcdn.com/w20/us.png" alt="US">
+                            <span id="selected-lang-text">English</span>
+                            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </div>
+                        <div class="custom-options" id="lang-options">
+                            <div class="custom-option selected" data-value="en">
+                                <img src="https://flagcdn.com/w20/us.png" alt="US"> <span>English</span>
+                            </div>
+                            <div class="custom-option" data-value="bg">
+                                <img src="https://flagcdn.com/w20/bg.png" alt="BG"> <span>Bulgarian</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="input-group">
                     <label data-i18n="currency">Currency</label>
-                    <select>
-                        <option>$ US Dollar</option>
-                        <option>BGN Bulgarian Lev</option>
+                    <select id="currency-select">
+                        <option value="$">$ US Dollar</option>
+                        <option value="€">€ Euro</option>
+                        <option value="BGN">BGN Bulgarian Lev</option>
                     </select>
                 </div>
 
@@ -56,7 +68,7 @@
                 <div class="input-group">
                     <label data-i18n="total_revenue">Total Revenue</label>
                     <div class="number-input">
-                        <span>$</span>
+                        <span class="currency-symbol">$</span>
                         <input type="number" id="total-revenue" value="10000">
                     </div>
                 </div>
@@ -64,7 +76,7 @@
                 <div class="input-group">
                     <label data-i18n="avg_order_value">Avg. Order Value</label>
                     <div class="number-input">
-                        <span>$</span>
+                        <span class="currency-symbol">$</span>
                         <input type="number" id="avg-order-value" value="1000">
                     </div>
                 </div>
