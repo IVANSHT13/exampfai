@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize date pickers
+    flatpickr("#campaign-start", {
+        dateFormat: "d-M-Y"
+    });
+    flatpickr("#campaign-end", {
+        dateFormat: "d-M-Y"
+    });
+
     const totalRevenueInput = document.getElementById('total-revenue');
     const avgOrderValueInput = document.getElementById('avg-order-value');
     

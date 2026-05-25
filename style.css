@@ -112,6 +112,7 @@ body {
 .date-input i {
     color: #94a3b8;
     padding-right: 12px;
+    cursor: pointer;
 }
 
 .number-input span {
