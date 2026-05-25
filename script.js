@@ -249,6 +249,19 @@ document.addEventListener('DOMContentLoaded', () => {
         el.addEventListener('input', updateCalculations);
     });
 
+    // Currency Switcher
+    const currencySelect = document.getElementById('currency-select');
+    const currencySymbols = document.querySelectorAll('.currency-symbol');
+    
+    if (currencySelect) {
+        currencySelect.addEventListener('change', (e) => {
+            const newSymbol = e.target.value;
+            currencySymbols.forEach(el => {
+                el.innerText = newSymbol;
+            });
+        });
+    }
+
     // Initial render
     updateCalculations();
 });

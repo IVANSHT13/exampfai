@@ -42,9 +42,10 @@
                 
                 <div class="input-group">
                     <label data-i18n="currency">Currency</label>
-                    <select>
-                        <option>$ US Dollar</option>
-                        <option>BGN Bulgarian Lev</option>
+                    <select id="currency-select">
+                        <option value="$">$ US Dollar</option>
+                        <option value="€">€ Euro</option>
+                        <option value="BGN">BGN Bulgarian Lev</option>
                     </select>
                 </div>
 
@@ -67,7 +68,7 @@
                 <div class="input-group">
                     <label data-i18n="total_revenue">Total Revenue</label>
                     <div class="number-input">
-                        <span>$</span>
+                        <span class="currency-symbol">$</span>
                         <input type="number" id="total-revenue" value="10000">
                     </div>
                 </div>
@@ -75,7 +76,7 @@
                 <div class="input-group">
                     <label data-i18n="avg_order_value">Avg. Order Value</label>
                     <div class="number-input">
-                        <span>$</span>
+                        <span class="currency-symbol">$</span>
                         <input type="number" id="avg-order-value" value="1000">
                     </div>
                 </div>
