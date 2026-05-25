@@ -56,10 +56,46 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCalculations(); // Re-render text on chart
     }
 
-    const languageSelect = document.getElementById('language-select');
-    if (languageSelect) {
-        languageSelect.addEventListener('change', (e) => {
-            setLanguage(e.target.value);
+    // Custom Language Select Logic
+    const langWrapper = document.getElementById('lang-wrapper');
+    const langTrigger = document.getElementById('lang-trigger');
+    const langOptions = document.querySelectorAll('.custom-option');
+    const selectedLangText = document.getElementById('selected-lang-text');
+    const selectedLangImg = langTrigger.querySelector('img');
+
+    if (langTrigger) {
+        langTrigger.addEventListener('click', () => {
+            langWrapper.classList.toggle('open');
+        });
+
+        langOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Update active classes
+                langOptions.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+
+                // Get values
+                const newValue = this.getAttribute('data-value');
+                const newText = this.querySelector('span').innerText;
+                const newImgSrc = this.querySelector('img').src;
+
+                // Update trigger UI
+                selectedLangText.innerText = newText;
+                selectedLangImg.src = newImgSrc;
+                
+                // Close dropdown
+                langWrapper.classList.remove('open');
+
+                // Trigger App Translation
+                setLanguage(newValue);
+            });
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!langWrapper.contains(e.target)) {
+                langWrapper.classList.remove('open');
+            }
         });
     }
 
