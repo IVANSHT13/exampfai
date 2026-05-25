@@ -42,11 +42,24 @@
                 
                 <div class="input-group">
                     <label data-i18n="currency">Currency</label>
-                    <select id="currency-select">
-                        <option value="$">$ US Dollar</option>
-                        <option value="€">€ Euro</option>
-                        <option value="BGN">BGN Bulgarian Lev</option>
-                    </select>
+                    <div class="custom-select-wrapper" id="currency-wrapper">
+                        <div class="custom-select-trigger" id="currency-trigger">
+                            <img src="https://flagcdn.com/w20/us.png" alt="US">
+                            <span id="selected-currency-text">$ US Dollar</span>
+                            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </div>
+                        <div class="custom-options" id="currency-options">
+                            <div class="custom-option currency-option selected" data-value="$">
+                                <img src="https://flagcdn.com/w20/us.png" alt="US"> <span>$ US Dollar</span>
+                            </div>
+                            <div class="custom-option currency-option" data-value="€">
+                                <img src="https://flagcdn.com/w20/eu.png" alt="EU"> <span>€ Euro</span>
+                            </div>
+                            <div class="custom-option currency-option" data-value="BGN">
+                                <img src="https://flagcdn.com/w20/bg.png" alt="BG"> <span>BGN Bulgarian Lev</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="input-group">
