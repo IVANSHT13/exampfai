@@ -8,8 +8,8 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f8fafc;
-    color: #1e293b;
+    background-color: #141624;
+    color: #e2e8f0;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -17,11 +17,11 @@ body {
 }
 
 .app-container {
-    background-color: #f8fafc;
+    background-color: #181c28;
     width: 1000px;
     padding: 24px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -32,12 +32,12 @@ body {
     align-items: center;
     gap: 10px;
     font-size: 1.2rem;
-    color: #64748b;
+    color: #cbd5e1;
 }
 
 .header .logo i {
-    background: #1e293b;
-    color: #f8fafc;
+    background: #e2e8f0;
+    color: #181c28;
     padding: 6px;
     border-radius: 4px;
     font-size: 1rem;
@@ -59,7 +59,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-    background-color: #ffffff;
+    background-color: #1e2231;
     border-radius: 12px;
     padding: 20px;
     width: 260px;
@@ -71,17 +71,17 @@ body {
 .input-group label {
     display: block;
     font-size: 0.8rem;
-    color: #475569;
+    color: #94a3b8;
     margin-bottom: 6px;
     font-weight: 500;
 }
 
 .input-group select, .date-input, .number-input {
     width: 100%;
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
+    background-color: #262b3d;
+    border: 1px solid #333a52;
     border-radius: 6px;
-    color: #1e293b;
+    color: #e2e8f0;
     font-size: 0.9rem;
     padding: 8px 12px;
     outline: none;
@@ -180,20 +180,20 @@ body {
 .date-input input, .number-input input {
     background: transparent;
     border: none;
-    color: #1e293b;
+    color: #e2e8f0;
     padding: 10px 12px;
     width: 100%;
     outline: none;
 }
 
 .date-input i {
-    color: #475569;
+    color: #94a3b8;
     padding-right: 12px;
     cursor: pointer;
 }
 
 .number-input span {
-    color: #475569;
+    color: #94a3b8;
     padding-left: 12px;
 }
 
@@ -213,7 +213,7 @@ body {
 
 /* Chart Panel */
 .chart-panel {
-    background-color: #ffffff;
+    background-color: #1e2231;
     border-radius: 12px;
     flex: 1;
     padding: 20px;
@@ -251,7 +251,7 @@ body {
     transform: translateY(-50%) rotate(-90deg);
     left: -45px;
     top: 50%;
-    color: #1e293b;
+    color: #e2e8f0;
 }
 
 .grid-lines {
@@ -266,7 +266,7 @@ body {
 }
 
 .grid-lines div {
-    border-left: 1px solid #e2e8f0;
+    border-left: 1px solid #2d3348;
     height: 100%;
 }
 
@@ -278,7 +278,7 @@ body {
     display: flex;
     justify-content: space-between;
     font-size: 0.75rem;
-    color: #1e293b;
+    color: #e2e8f0;
 }
 
 .chart-row {
@@ -297,28 +297,28 @@ body {
 }
 
 .bar-prospects {
-    background-color: #e2e8f0; border: 1px solid #cbd5e1;
+    background-color: #555d72;
     z-index: 3;
 }
 
 .bar-leads {
-    background-color: #00966E;
+    background-color: #848ca3;
     z-index: 4;
 }
 
 .bar-customers {
-    background-color: #D62612;
+    background-color: #cbd5e1;
     z-index: 5;
 }
 
 .chart-tooltip {
     position: absolute;
-    background-color: #e2e8f0;
-    border: 1px solid #94a3b8;
+    background-color: #3f4761;
+    border: 1px solid #5a6482;
     padding: 8px 12px;
     border-radius: 4px;
     font-size: 0.75rem;
-    color: #1e293b;
+    color: #e2e8f0;
     z-index: 10;
     pointer-events: none;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
@@ -334,7 +334,7 @@ body {
 }
 
 .metric-card {
-    background-color: #ffffff; color: #1e293b; border: 1px solid #e2e8f0; /* Similar to bar Prospects color */
+    background-color: #555d72; /* Similar to bar Prospects color */
     border-radius: 10px;
     padding: 16px;
     display: flex;
@@ -343,11 +343,11 @@ body {
     flex: 1;
 }
 
-.metric-card:nth-child(2) { background-color: #00966E; color: #ffffff;}
-.metric-card:nth-child(3) { background-color: #D62612; color: #ffffff;}
+.metric-card:nth-child(2) { background-color: #848ca3; color: #1e2231;}
+.metric-card:nth-child(3) { background-color: #cbd5e1; color: #1e2231;}
 
 .metric-card:nth-child(2) .metric-header, .metric-card:nth-child(3) .metric-header {
-    color: #e2e8f0;
+    color: #333a52;
 }
 
 .metric-header {
@@ -355,7 +355,7 @@ body {
     justify-content: space-between;
     font-weight: 600;
     font-size: 0.9rem;
-    color: #1e293b;
+    color: #e2e8f0;
 }
 
 .metric-header i {
@@ -375,9 +375,9 @@ body {
     overflow: hidden;
 }
 
-.metric-card:nth-child(1) .metric-bar { background-color: #00966E; }
-.metric-card:nth-child(2) .metric-bar { background-color: #ffffff; }
-.metric-card:nth-child(3) .metric-bar { background-color: #ffffff; }
+.metric-card:nth-child(1) .metric-bar { background-color: #fff; }
+.metric-card:nth-child(2) .metric-bar { background-color: #475569; }
+.metric-card:nth-child(3) .metric-bar { background-color: #475569; }
 
 .metric-bar {
     height: 100%;
@@ -387,7 +387,7 @@ body {
 
 /* Controls Panel */
 .controls-panel {
-    background-color: #ffffff;
+    background-color: #1e2231;
     border-radius: 12px;
     padding: 24px;
     display: flex;
@@ -404,14 +404,14 @@ body {
 .slider-header {
     font-size: 0.85rem;
     font-weight: 500;
-    color: #1e293b;
+    color: #e2e8f0;
     margin-bottom: 20px;
 }
 
 .slider-container {
     position: relative;
     height: 10px;
-    background-color: #e2e8f0;
+    background-color: #2d3348;
     border-radius: 5px;
 }
 
@@ -429,7 +429,7 @@ input[type=range]::-webkit-slider-thumb {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #1e293b;
+    background: #e2e8f0;
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
@@ -439,7 +439,7 @@ input[type=range]::-webkit-slider-thumb {
     top: 0;
     left: 0;
     height: 100%;
-    background-color: #00966E;
+    background-color: #cbd5e1;
     border-radius: 5px;
     z-index: 1;
 }
@@ -449,9 +449,5 @@ input[type=range]::-webkit-slider-thumb {
     right: 0;
     top: 25px;
     font-size: 0.8rem;
-    color: #1e293b;
+    color: #e2e8f0;
 }
-
-
-
-
